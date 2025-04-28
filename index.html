@@ -3,19 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Distribuidora Moderna</title>
-  <link rel="stylesheet" href="estili.css">
-  <link rel="shortcut icon" href="./imagem/logo1.jpg" type="image/x-icon">
-  <!-- Bootstrap 5 CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <!-- Custom CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/estilo.css">
+  <link rel="shortcut icon" href="./imagem/logo1.jpg" type="image/x-icon">
+  <title>Distribuidora Moderna</title>
 </head>
 <body>
-
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark">
+ <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container">
       <a class="navbar-brand" href="#">Distribuidora Moderna</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -36,16 +31,14 @@
       </div>
     </div>
   </nav>
-
-  <!-- Main Content -->
   <main>
     <section class="container mt-5">
       <h2 class="text-center mb-4">Nossos Produtos</h2>
       <div class="row">
-        <!-- Product 1 -->
+   
         <div class="col-md-4 mb-4">
           <div class="card product-card">
-            <img src="./imagem/coca em lata.jpg" class="card-img-top" alt="Produto 1">
+            <img src="./assets/img/coca em lata.jpg" class="card-img-top" alt="coca lata">
             <div class="card-body">
               <h5 class="card-title">coca</h5>
               <p class="card-text">Descrição breve do produto.</p>
@@ -53,10 +46,10 @@
             </div>
           </div>
         </div>
-        <!-- Product 2 -->
+
         <div class="col-md-4 mb-4">
           <div class="card product-card">
-            <img src="./imagem/kit refrigerante.jpg" class="card-img-top" alt="Produto 2">
+            <img src="./assets/img/guaranar.png" class="card-img-top" alt="Produto 2">
             <div class="card-body">
               <h5 class="card-title">kit2l</h5>
               <p class="card-text">Descrição breve do produto.</p>
@@ -64,10 +57,10 @@
             </div>
           </div>
         </div>
-        <!-- Product 3 -->
+     
         <div class="col-md-4 mb-4">
           <div class="card product-card">
-            <img src="./imagem/guaranar.png" class="card-img-top" alt="Produto 3">
+            <img src="./assets/img/kit refrigerante.jpg" class="card-img-top" alt="Produto 3">
             <div class="card-body">
               <h5 class="card-title">Gurana</h5>
               <p class="card-text">Descrição breve do produto.</p>
@@ -78,14 +71,11 @@
       </div>
     </section>
   </main>
-
-  <!-- Cart -->
   <div class="cart">
     <h5>Carrinho</h5>
-    <div id="cart-items"></div>
+    <div id="cart-items">
+    </div>
   </div>
-
-  <!-- Footer -->
   <footer class="text-center">
     <a href="https://wa.me/SEU_NUMERO" target="_blank"><i class="fab fa-whatsapp"></i></a>
     <a href="https://instagram.com/SEU_INSTAGRAM" target="_blank"><i class="fab fa-instagram"></i></a>
@@ -93,46 +83,8 @@
     <a href="https://t.me/SEU_TELEGRAM" target="_blank"><i class="fab fa-telegram"></i></a>
   </footer>
 
-  <!-- Bootstrap 5 JS and Popper.js -->
+ 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- Custom JavaScript -->
-  <script>
-    const cartItems = [];
-    const cartContainer = document.getElementById('cart-items');
-
-    // Adicionar ao carrinho
-    document.querySelectorAll('.add-to-cart').forEach(button => {
-      button.addEventListener('click', () => {
-        const product = button.getAttribute('data-product');
-        if (!cartItems.includes(product)) {
-          cartItems.push(product);
-          updateCart();
-        }
-      });
-    });
-
-    // Atualizar o carrinho
-    function updateCart() {
-      cartContainer.innerHTML = '';
-      cartItems.forEach((item, index) => {
-        const cartItemDiv = document.createElement('div');
-        cartItemDiv.className = 'cart-item';
-        cartItemDiv.innerHTML = `
-          <span>${item}</span>
-          <button class="btn btn-danger btn-sm remove-from-cart" data-index="${index}">Remover</button>
-        `;
-        cartContainer.appendChild(cartItemDiv);
-      });
-
-      // Remover do carrinho
-      document.querySelectorAll('.remove-from-cart').forEach(button => {
-        button.addEventListener('click', () => {
-          const index = button.getAttribute('data-index');
-          cartItems.splice(index, 1);
-          updateCart();
-        });
-      });
-    }
-  </script>
+  <script src="./assets/js/script.js"></script>
 </body>
 </html>
